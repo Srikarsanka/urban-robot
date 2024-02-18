@@ -1,0 +1,178 @@
+*{
+    padding: 0PX;
+    MARGIN:0px;
+    text-decoration:none;
+    list-style:none;
+    box-sizing:border-box;
+
+}
+label1{
+    background-image:url("carecenteral.logo1.jpg") no-repeat;
+    background-size:cover;
+}
+
+body{
+    font-family:montserrat;
+
+}
+nav{
+    background-color:#0082e6;
+    height:80px;
+    width:100%;
+}
+
+
+#one{
+    color:white;
+    font-size:35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight:bold;
+
+}
+nav ul{
+    float:right;
+    margin-left:20px;
+}
+nav ul li{
+    display:inline-block;
+    line-height:80px;
+    margin: 0 5px;
+
+}
+nav ul li a{
+    color:white;
+    font-size:17px;
+    padding: 7px 13px;
+     border-radius: 3px;
+    text-transform:uppercase;
+
+}
+a.active,a:hover{
+    background-color:#1b9bff;
+    transition:.5s;
+}
+checkbtn{
+    font-size:30px;
+    color:white;
+    float:right;
+    line-height:80px;
+    margin-left:40px;
+    cursor:pointer;
+    display:none;
+}
+#check{
+    display:none;
+}
+@media (max-width:952px){
+    #one{
+        font-size:30px;
+        padding-left:50px;
+    }
+    nav ul li a{
+        font-size:16px;
+    }
+}
+@media (max-width:858px){
+.checkbtn{
+    display:block;
+}
+ul{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background-color:#2c3350;
+    top:80px;
+    left:-100px;
+    text-align:center;
+    transition:all .5s;
+}
+nav ul li{
+    display:block;
+}
+nav ul li a{
+    font-size:20px;
+}
+a:hover,a.active{
+    background-color:none;
+    color:#0082e6;
+}
+#check:checked ~ ul{
+    left:0px;
+}
+}
+section{
+    background:url("baground.jpeg") no repeat;
+    background-size:cover;
+    height:calc(100vh-80px);
+    width:100%;
+}
+p{
+    font-family: 'Courier New', Courier, monospace;
+    FONT-WEIGHT:10000PX;
+    font-size: xx-large;
+}
+a{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color:#a93e66;
+    text-align: center;
+    text-size-adjust: 25PX;
+    font-size:x-large;
+    font-style: italic;
+}
+H2{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-weight: 1000000PX;
+    font-style: italic;
+    text-decoration: double;
+    COLOR:WHITE;
+}
+
+#fotter1{
+    width:100%;
+    height: 80px;
+    background-color: #1b9bff;
+   }
+   .fotter{
+    margin-left: 140px;
+    padding: 0px;
+   }
+   #FIR1{
+    margin-left: 45%;
+    background-color: #bde0fe;
+   }
+   #divscrolable{
+    background-color: #1b9bff;
+    width: 100%;
+    height: 20PX;
+   }
+   .marquee {
+    position: absolute;
+    white-space: nowrap;
+    animation: rightThenLeft 4s linear infinite;
+   }
+    @keyframes rightThenLeft {
+    0% {left: 0%;}
+    50% {left: 100%;}
+    100% {left: 0%;}
+}
+#divbody1{
+    width:100%;
+    height:1500px;
+    background-image: url("https://th.bing.com/th/id/OIG2.DZ4SPOSsfCZq1137EvdS?pid=ImgGn");
+    background-size: cover;
+    display: grid;
+    align-items: center;
+}
+#divbody1-1 {
+    background-color: #ffffff;
+    opacity: 0.5;
+    width:50%;
+    min-height: 1000px;
+    margin-left:750px;
+}

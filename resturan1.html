@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="resturantmain.css">
+    <style>
+        /* Style the slideshow container */
+        .slideshow-container {
+          position: relative;
+          width: 100%;
+          height: 550px;
+          margin: auto;
+        }
+        
+        /* Hide the images by default */
+        .mySlides {
+          display: none;
+          background-size: cover;
+          height:310px;
+        }
+        
+        /* Add a dot indicator for each slide */
+        .dot-container {
+          text-align: center;
+          padding: 10px;
+          background: #ddd;
+          background-size: cover;
+        }
+        
+        /* The dots/bullets/indicators */
+        .dot {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        /* Add a hover effect to the dots */
+        .active, .dot:hover {
+          background-color: #717171;
+        }
+        </style>
+    
+</head>
+<body>
+    <nav>
+        <input type="checkbox"id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label1></label1>
+            <LABEL ID="one">NOVOTEL</LABEL>
+            <label></label>
+        <Ul>
+            <li><a href="resturan1.html"class="active">HOME</a></li>
+            <Li><a href="hotpital.html">BRANCH</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="dinein.html">DINE IN</a></li>
+            <li><a href="takeaway.html">TAKE AWAY</a></li>
+            <li><a href="home.html">HOME-DELIVERY</a></li>
+            <li><a HREF="halls.html">HALLS AND PARTYS</a></li>
+            </Ul>
+    </nav>
+    <section></section>
+    <body>
+
+        
+        <div class="slideshow-container">
+        
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides">
+          <img src="https://th.bing.com/th/id/OIG1.vrQUwoLYkvy3rXITLA8Y?pid=ImgGn"alt="collage image"style=" height:550px" >
+        </div>
+        
+        <div class="mySlides">
+          <img src="https://th.bing.com/th/id/OIG1.lSIkdnjd6Y86j0B6f.yU?pid=ImgGn" alt="logoimmage"  style="height:550px">
+        </div>
+        
+        <div class="mySlides">
+          <img src="https://th.bing.com/th/id/OIG1.fBBc6HDYU27TovWi1Fl5?pid=ImgGn"alt="resturantimage" style="height:550px ;" >
+          
+        </div>
+        
+        <!-- Next and previous buttons -->
+        
+        </div>
+        <br>
+        
+        <!-- The dots/circles -->
+        <div class="dot-container">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        
+        <script>
+        // JavaScript code
+        
+        // Variables for the slides and the dots
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        
+        // Keep track of the current slide and the current dot
+        var slideIndex = 0;
+        var dotIndex = 0;
+        
+        // Call the showSlides function to display the first slide
+        showSlides();
+        
+        // Define the showSlides function
+        function showSlides() {
+        
+          // Loop through all the slides and hide them
+          for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+        
+          // Loop through all the dots and remove the active class
+          for (var i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+        
+          // Increment the slide index by 1 to show the next slide
+          slideIndex++;
+        
+          // If the slide index is higher than the number of slides, reset it to 1
+          if (slideIndex > slides.length) {
+            slideIndex = 1;
+          }
+        
+          // Display the current slide
+          slides[slideIndex-1].style.display = "block";
+        
+          // Add the active class to the current dot
+          dots[slideIndex-1].className += " active";
+        
+          // Set a timer to show the next slide after 3 seconds
+          setTimeout(showSlides, 3000);
+        }
+        
+        // Define the plusSlides function to control the previous and next buttons
+        function plusSlides(n) {
+        
+          // Increment or decrement the slide index by the parameter n
+          slideIndex += n;
+        
+          // If the slide index is too high or too low, reset it to the opposite end
+          if (slideIndex > slides.length) {
+            slideIndex = 1;
+          } else if (slideIndex < 1) {
+            slideIndex = slides.length;
+          }
+        
+          // Display the current slide
+          slides[slideIndex-1].style.display = "block";
+        
+          // Loop through all the dots and remove the active class
+          for (var i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+        
+          // Add the active class to the current dot
+          dots[slideIndex-1].className += " active";
+        }
+        
+        // Define the currentSlide function to control the dots
+        function currentSlide(n) {
+        
+          // Set the slide index to the parameter n
+          slideIndex = n;
+        
+          // Display the current slide
+          slides[slideIndex-1].style.display = "block";
+        
+          // Loop through all the dots and remove the active class
+          for (var i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+        
+          // Add the active class to the current dot
+          dots[slideIndex-1].className += " active";
+          // Get the slider and image elements
+var slider = document.getElementById('yourSliderId');
+var imgs = document.querySelectorAll('.mySlides img');
+
+// Add an event listener to the slider
+slider.addEventListener('input', function(e) {
+    // Get the slider's value
+    var value = e.target.value;
+
+    // Change the size of the images
+    imgs.forEach(function(img) {
+        img.style.width = value +100% 'px';
+        img.style.height = value + 100%'px';
+    });
+});
+
+
+        }
+        </script>
+       
+       <marquee behavior="scroll" direction="LEFT"><p STYLE="COLOR:BLUE">TODAY SPECAILS:  MAIN COURSE-POT MUTTON BIRYANI POT,POT PRAWNS BIRYANI, BAMBOO VEG BIRYANI,TILKUT,SHORSHE BAATA ILLISH,Lyodur Tschaman ,Undhiy</p></marquee>
+        <div id="divbody1">
+<h1>Welcome To Novotel</h1>
+        <br></br>
+        <p> Break from the ordinary and escape to movotel,your personal slice of paradise on the Upper West Side !!</p>
+        <p>Movotel is open seven days a week,for in-person service as well as takeout and delivery.</p>
+        <p>Join us inside and be transported to a luch tropical oasis,or stay connected to the city and sit outside on our covered and climate-controlled potio.</p>
+        </div>
+        <div id="divbody2">
+         
+        </div>
+        <div id="divbody3">
+          <div id="divbody3-1">
+            <h1 STYLE="COLOR: white">HOURS & LOCATION</h1>
+            <BR>
+            <P STYLE=COLOR:#c1121f > 517 OMR ROAD,JEPPIAR NAGAR</P>
+            <BR>
+            <P  STYLE=COLOR:#c1121f>CHENNAI,PIN-600119</P>
+            <BR>
+            <P STYLE=COLOR:#c1121f>NOVOTEL@GMAIL.COM</P>
+            <br></br>
+            <h2>Monday - Thursday:</h2>
+            <h2>5:00 pm - 12:00 am</h2>
+            <h2>Friday & Saturday</h2>
+            <h2>12:00 pm - 2:00 am</h2>
+            <h2>Sunday:</h2>
+            <h2>12:00pm - 12:00am</h2>
+            <BR></BR>
+    
+            <A ID="FIR1" HREF="LOCATIONRESTURANT.HTML"><INPUT TYPE="BUTTON" VALUE="VIST US" ></A>
+          </div>
+          </div>
+          <div id="divbody4"></div>
+          <div id="divbody5">
+            <h1 style="color:white">The Newest member of pickel hospility </h1>
+            <p> Find out about learn behind the movotel</p>
+            <BR>
+              
+             /* <A ID="FIR" HREF="about.html"><INPUT TYPE="BUTTON" VALUE="LEARN MORE" ></A>*/
+          </div>
+         
+          <div id="divbody7">
+            <div id="divbdy7-1">
+            <H1>PRIVATE EVENTS</H1>
+            <BR>
+            <P>HOST YOUR NEXT EVENT AT NOVOTEL..</P>
+            <BR>
+            <A ID="FIR1" HREF="halls.html"><INPUT TYPE="BUTTON" VALUE="INQUIRE" ></A>
+           </div>
+          </div>
+          <div id="divbody8"></div>
+          <div id="DIV9">
+          <div id="divbody9-1">
+            <h1>RESERVATIONS AT MOVOTEL</h1>
+            <p>PRE BOOK TABLE BEFORE ONE DAY TO AVOID RUSH</p>
+            <A ID="FIR1" HREF="reservation.html"><INPUT TYPE="BUTTON" VALUE="RESERVE"></A>
+          </div>
+          </div>
+          </body>
+           <div id="fotter1">
+            <a class="fotter" STYLE="COLOR:WHITE" HREF="https://www.facebook.com/">FACEBOOK</a>
+          
+            <a  class="fotter"STYLE="COLOR:WHITE" HREF="https://www.instagram.com/">INSTAGRAM</a>
+            
+            <a class="fotter" STYLE="COLOR:WHITE" HREF="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwj2tqODy_2DAxW7wTwCHRrGBH0YABAAGgJzZg&ase=2&gclid=CjwKCAiA8NKtBhBtEiwAq5aX2IGQyJpAihcXqxwSHWgQ0WEMLZ4gEFITNnLHjiekfK_P1r7URuW3gxoCq8EQAvD_BwE&ohost=www.google.com&cid=CAESVeD2fRXjhjVchpaXGLgpC5mI4Xe5NOWJyMTMVa-dsV5MXoPQTArFqd1FONQjKlCw0Fhc06EwRY5D_Is19cO3gmpcbDDTqP5GIhVweHjQQBBrV1clrSQ&sig=AOD64_2F7ZjS5P8Z_SrVTzt6UZ9oNOArGA&q&nis=4&adurl&ved=2ahUKEwjdqZ2Dy_2DAxVjzTgGHSC-B-QQ0Qx6BAgKEAE">TRIP ADVISOR</a>
+            
+            <a  class="fotter"STYLE="COLOR:WHITE" HREF="WWW.YOUTUBE.COM.COM">YOUTUBE</a>
+            <a  class="fotter"STYLE="COLOR:WHITE" HREF="https://www.zomato.com/chennai">ZOMATO</a>
+            <BR></BR>
+            <P STYLE="COLOR:WHITE">THANK YOU
+              VISIT AGAIN.....
+            </P>
+           </div>
+           <div id="DIVFOOT2">
+            <P>DESIGNED BY SANKA SRIKAR</P>
+           </div>
+        
+
+    
+   
+
+
+
+
+
+
+
+
+
+    
+    </html>
+    

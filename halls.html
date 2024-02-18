@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="halls.css">
+<body>
+    <nav>
+        <input type="checkbox"id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label1></label1>
+            <LABEL ID="one">NOVOTEL</LABEL>
+            <label></label>
+        <Ul>
+            <li><a href="resturan1.html"class="active">HOME</a></li>
+            <Li><a href="hotpital.html">BRANCH</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="dinein.html">DINE IN</a></li>
+            <li><a href="takeaway.html">TAKE AWAY</a></li>
+            <li><a href="home.html">HOME-DELIVERY</a></li>
+            <li><a HREF="halls.html">HALLS AND PARTYS</a></li>
+            </Ul>
+    </nav>
+    <section></section>
+    <marquee behavior="scroll" direction="LEFT"><p STYLE="COLOR:BLUE">TODAY SPECAILS:  MAIN COURSE-POT MUTTON BIRYANI POT,POT PRAWNS BIRYANI, BAMBOO VEG BIRYANI,TILKUT,SHORSHE BAATA ILLISH,Lyodur Tschaman ,Undhiy</p></marquee>
+    <body>
+        <div id="divbody1">
+            <div id="divbody2">
+
+<h1 class="reserv">Table Reservation Form</h1>
+<form id="reservationForm">
+  <label for="name"><h1 class="reserv">Name:</h1></label>
+  <input type="text" id="name" name="name">
+  <label for="email"><h1 class="reserv">Email:</h1></label>
+  <input type="text" id="email" name="email">
+  <label for="phone"><h1 class="reserv">Phone:</h1></label>
+  <input type="text" id="phone" name="phone">
+  <label for="guests"><h1 class="reserv">Number of Guests:</h1></label>
+  <input type="number" id="guests" name="guests">
+  <label for="date"><h1 class="reserv">Date:</h1></label>
+  <input type="date" id="date" name="date">
+  <label for="TIME"><h1 class="reserv">Time:</h1></label>
+  <input type="TIME" id="TIME" name="TIME">
+  <br></BR>
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+var bookedHalls = JSON.parse(localStorage.getItem('bookedHalls')) || {};
+
+document.getElementById("reservationForm").addEventListener("submit", function(event){
+  event.preventDefault();
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var guests = document.getElementById("guests").value;
+  var date = document.getElementById("date").value;
+  var TIME = document.getElementById("TIME").value;
+  var randomId = Math.random().toString(36).substr(2, 10);
+  var bookingId = "BOOKING ID.NO:" + randomId;
+  var hallNumber;
+
+  if (guests < 10) {
+    alert("Sorry, we do not book party halls for less than 10 guests.");
+    return;
+  } else if (guests >= 10 && guests <= 50) {
+    hallNumber = Math.floor(Math.random() * 5) + 1;
+  } else if (guests > 50) {
+    hallNumber = Math.floor(Math.random() * 3) + 5;
+  }
+
+  var dateTimeKey = date + TIME;
+
+  // Check if all party halls are booked on the specified date and time
+  var allHallsBooked = bookedHalls[dateTimeKey] && bookedHalls[dateTimeKey].length === 5;
+
+  if (allHallsBooked) {
+    alert("Sorry, all party halls are booked on this date and time. Please choose another date or time.");
+    return;
+  }
+
+  // Check if the chosen hall number is already booked, generate a new one if needed
+  while (bookedHalls[dateTimeKey] && bookedHalls[dateTimeKey].some(booking => booking.hallNumber === hallNumber)) {
+    hallNumber = guests < 10 ? Math.floor(Math.random() * 5) + 1 : Math.floor(Math.random() * 3) + 5;
+  }
+
+  if (!bookedHalls[dateTimeKey]) {
+    bookedHalls[dateTimeKey] = [];
+  }
+
+  var bookingDetails = {
+    name: name,
+    phone: phone,
+    bookingId: bookingId,
+    hallNumber: hallNumber
+  };
+
+  bookedHalls[dateTimeKey].push(bookingDetails);
+  localStorage.setItem('bookedHalls', JSON.stringify(bookedHalls));
+
+  alert("Reservation Details:\n\nName: " + name + "\nPhone: " + phone + "\nEmail: " + email + "\nNumber of Guests: " + guests + "\nDate: " + date + "\nTime: " + TIME + "\nYour Booking ID is: " + bookingId + "\nYour Party Hall Number is: " + hallNumber);
+});
+
+
+
+  
+</script>
+
+            </div>
+            <div id="divbody3"></div>
+        </div>
+        </div>
+    </body>
+        <div id="fotter1">
+            <a class="fotter" STYLE="COLOR:WHITE" HREF="https://www.facebook.com/">FACEBOOK</a>
+          
+            <a  class="fotter"STYLE="COLOR:WHITE" HREF="https://www.instagram.com/">INSTAGRAM</a>
+            
+            <a class="fotter" STYLE="COLOR:WHITE" HREF="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwj2tqODy_2DAxW7wTwCHRrGBH0YABAAGgJzZg&ase=2&gclid=CjwKCAiA8NKtBhBtEiwAq5aX2IGQyJpAihcXqxwSHWgQ0WEMLZ4gEFITNnLHjiekfK_P1r7URuW3gxoCq8EQAvD_BwE&ohost=www.google.com&cid=CAESVeD2fRXjhjVchpaXGLgpC5mI4Xe5NOWJyMTMVa-dsV5MXoPQTArFqd1FONQjKlCw0Fhc06EwRY5D_Is19cO3gmpcbDDTqP5GIhVweHjQQBBrV1clrSQ&sig=AOD64_2F7ZjS5P8Z_SrVTzt6UZ9oNOArGA&q&nis=4&adurl&ved=2ahUKEwjdqZ2Dy_2DAxVjzTgGHSC-B-QQ0Qx6BAgKEAE">TRIP ADVISOR</a>
+            
+            <a  class="fotter"STYLE="COLOR:WHITE" HREF="WWW.YOUTUBE.COM.COM">YOUTUBE</a>
+            <a  class="fotter"STYLE="COLOR:WHITE" HREF="https://www.zomato.com/chennai">ZOMATO</a>
+            <BR></BR>
+            <P STYLE="COLOR:WHITE">THANK YOU
+              VISIT AGAIN.....
+            </P>
+           </div>
+           <div id="DIVFOOT2">
+            <P>DESIGNED BY SANKA SRIKAR</P>
+           </div>
+        </html>
